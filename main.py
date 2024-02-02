@@ -1,4 +1,7 @@
+import os
 from datetime import datetime, timedelta
+
+import requests
 
 """
 <사전 출석체크>
@@ -28,6 +31,19 @@ def main():
 {text_monthday} {text_weekday}, {text_timetype} 운동 출석 체크하겠습니다. ({text_timefromto})
     """
     print(msg)
+    send_message(msg)
+
+
+def send_message(msg):
+    url = os.environ.get("WEBHOOK_URL")
+    header = {
+    }
+    data = {
+        "content": msg
+    }
+    response = requests.post(url, header, data)
+    print(response.status_code)
+    print(response.text)
 
 
 if __name__ == '__main__':
