@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>운동 예약 정보 수정</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>운동 예약 정보</h1>
+    <div id="daysList" class="days-list"></div>
+    <div id="editForm" class="edit-form" style="display: none;">
+      <h2>예약 정보 수정</h2>
+      <form id="editFormFields">
+        <label for="dayInKorean">요일 (Korean):</label>
+        <input type="text" id="dayInKorean" name="dayInKorean" readonly>
+        <label for="ampm">시간대:</label>
+        <input type="text" id="ampm" name="ampm" required>
+        <label for="time">시간:</label>
+        <input type="text" id="time" name="time" required>
+        <label for="comment">코멘트:</label>
+        <textarea id="comment" name="comment"></textarea>
+        <button type="button" onclick="updateDay()">수정 완료</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
